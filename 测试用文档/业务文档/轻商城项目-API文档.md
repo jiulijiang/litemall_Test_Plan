@@ -2,8 +2,7 @@
 
 ### 系统信息
 
-- 系统路径：http://www.litemall360.com:8082
-- 后台管理路径: http://www.litemall360.com:8081
+- 系统路径：http://www.litemall360.com:8080
 
 
 ### 1、获取首页数据
