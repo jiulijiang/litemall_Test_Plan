@@ -4,8 +4,9 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # 项目基础地址
-BASE_URL = "http://www.litemall360.com:8080"
+BASE_URL_API = "http://www.litemall360.com:8080"
 BASE_URL_ROOT = "http://www.litemall360.com:8081"
+BASE_URL_USR = "http://www.litemall360.com:8082"
 
 # 测试账号
 USER_NAME = "user123"

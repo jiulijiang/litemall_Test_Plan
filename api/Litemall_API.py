@@ -102,7 +102,7 @@ class LiteMallAPI:
         }
         return requests.get(url=urlCartNum, headers=headerCartNum)
 
-    def addToCart(self,GOODS_ID: str,GOODS_NUM: str,productId = "2",tokenCart = None):
+    def addToCart(self,GOODS_ID: int,GOODS_NUM: int,productId = "2",tokenCart = None):
         """
         加入购物车
         """
@@ -161,6 +161,110 @@ class LiteMallAPI:
         }
         return requests.get(url=urlSettleGoods, headers=headerSettleGoods)
 
+    def addAddress(self,NAME: str, PHONE: str,COUNTRY: str, PROVINCE: str,
+                   CITY: str, COUNTY: str, AREA_CODE: str, POSTAL_CODE: str,
+                   ADDRESS_DETAIL: str, IS_DEFAULT: bool,tokenCart = None):
+        """
+        添加地址
+        """
+        if tokenCart == None:
+            tokenCart = self.__getToken()
+        urlAddAddress = config.BASE_URL_API+ "/wx/address/save"
+        headerAddAddress = {
+            "X-Litemall-Token": tokenCart,
+            "Content-Type": "application/json"
+        }
+        bodyAddAddress = {
+            "name":NAME,
+            "tel":PHONE,
+            "country":COUNTRY,
+            "province":PROVINCE,
+            "city":CITY,
+            "county":COUNTY,
+            "areaCode":AREA_CODE,
+            "postalCode":POSTAL_CODE,
+            "addressDetail":ADDRESS_DETAIL,
+            "isDefault": IS_DEFAULT
+        }
+        return requests.post(url=urlAddAddress, headers=headerAddAddress, json=bodyAddAddress)
+
+    def checkAddress(self,tokenCart = None):
+        """
+        查看地址
+        """
+        if tokenCart == None:
+            tokenCart = self.__getToken()
+        urlCheckAddress = config.BASE_URL_API+ "/wx/address/list"
+        headerCheckAddress = {
+            "X-Litemall-Token": tokenCart
+        }
+        return requests.get(url=urlCheckAddress, headers=headerCheckAddress)
+
+
+    def subOder(self,ADDRESS_ID: str,CART_ID: str,COUPON_ID: str,
+                USER_COUPON_ID: str,GROUPON_LINK_ID: int,
+                GROUPON_RULES_ID: int,MESSAGE: str,tokenCart = None):
+        if tokenCart == None:
+            tokenCart = self.__getToken()
+        urlSubOder = config.BASE_URL_API+ "/wx/order/submit"
+        headerSubOder = {
+            "X-Litemall-Token": tokenCart,
+            "Content-Type": "application/json"
+        }
+        bodySubOder = {
+            "addressId":ADDRESS_ID,
+            "cartId":CART_ID,
+            "couponId":COUPON_ID,
+            "userCouponId":USER_COUPON_ID,
+            "grouponLinkId":GROUPON_LINK_ID,
+            "grouponRulesId":GROUPON_RULES_ID,
+            "message":MESSAGE
+        }
+        return requests.post(url=urlSubOder, headers=headerSubOder, json=bodySubOder)
+
+    def getOrderList(self,tokenCart = None):
+        """
+        获取订单列表
+        """
+        if tokenCart == None:
+            tokenCart = self.__getToken()
+        urlOrderList = config.BASE_URL_API+ "/wx/order/list?showType=0&page=1&limit=10"
+        headerOrderList = {
+            "X-Litemall-Token": tokenCart
+        }
+        return requests.get(url=urlOrderList, headers=headerOrderList)
+
+
+    def coollectGoods(self,VALUE_ID: str,TYPE: int,tokenCart = None):
+        """
+        收藏物品
+        """
+        if tokenCart == None:
+            tokenCart = self.__getToken()
+        urlCollectGoods = config.BASE_URL_API+ "/wx/collect/addordelete"
+        headerCollectGoods = {
+            "X-Litemall-Token": tokenCart,
+            "Content-Type": "application/json"
+        }
+        bodyCollectGoods = {
+            "valueId":VALUE_ID,
+            "type":TYPE
+        }
+        return requests.post(url=urlCollectGoods, headers=headerCollectGoods, json=bodyCollectGoods)
+
+    def myCollectGoods(self,tokenCart = None):
+        """
+        查看收藏物品
+        """
+        if tokenCart == None:
+            tokenCart = self.__getToken()
+        urlMyCollectGoods = config.BASE_URL_API+ "/wx/user/index"
+        headerMyCollectGoods = {
+            "X-Litemall-Token": tokenCart
+        }
+        return requests.get(url = urlMyCollectGoods, headers=headerMyCollectGoods)
+
 if __name__ == "__main__":
     test = LiteMallAPI()
-    print(test.getCartGoodsNum().json())
+    print(test.addAddress("jack001","13611224455","China","Beijing","Beijing","HaiDian","110101","100091","heima",True).json())
+    print(test.checkAddress().json())
