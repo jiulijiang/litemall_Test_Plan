@@ -36,16 +36,23 @@ class DBUtil:
     @classmethod
     def exe_sql(cls, sql):
         try:
+            print(f"执行SQL: {sql}")
             cursor = cls.__get_cursor()
             cursor.execute(sql)
             if sql.split()[0].lower() == "select":
-                return cursor.fetchall()
+                result = cursor.fetchall()
+                print(f"查询结果: {result}")
+                return result
             else:
                 cls.__conn.commit()
-                return cursor.rowcount
+                affected_rows = cursor.rowcount
+                print(f"影响行数: {affected_rows}")
+                return affected_rows
         except Exception as e:
-            print(e)
-            cls.__conn.rollback()
+            print(f"SQL执行错误: {e}")
+            if cls.__conn:
+                cls.__conn.rollback()
+            return None
         finally:
             cls.__close_cursor()
             cls.__close_conn()

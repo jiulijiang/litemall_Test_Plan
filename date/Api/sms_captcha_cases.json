@@ -4,7 +4,7 @@
         "name": "短信验证码-正确手机号",
         "mobile": "13611224455",
         "expected_status_code": 200,
-        "expected_errno": null,
+        "expected_errno": 0,
         "expected_errmsg_patterns": ["成功", "验证码未超时1分钟，不能发送"]
     },
     {
@@ -12,7 +12,7 @@
         "name": "短信验证码-手机号为空",
         "mobile": "",
         "expected_status_code": 200,
-        "expected_errno": null,
+        "expected_errno": 401,
         "expected_errmsg_patterns": ["参数不对", "参数值不对", "手机号不能为空"]
     },
     {
@@ -20,7 +20,7 @@
         "name": "短信验证码-手机号第一位不为1",
         "mobile": "23611224455",
         "expected_status_code": 200,
-        "expected_errno": null,
+        "expected_errno": 402,
         "expected_errmsg_patterns": ["参数不对", "参数值不对", "手机号格式不正确"]
     },
     {
@@ -28,7 +28,7 @@
         "name": "短信验证码-手机号第二位小于等于2",
         "mobile": "11611224455",
         "expected_status_code": 200,
-        "expected_errno": null,
+        "expected_errno": 402,
         "expected_errmsg_patterns": ["参数不对", "参数值不对", "手机号格式不正确"]
     },
     {
@@ -36,7 +36,7 @@
         "name": "短信验证码-手机号10位数字",
         "mobile": "1361122445",
         "expected_status_code": 200,
-        "expected_errno": null,
+        "expected_errno": 402,
         "expected_errmsg_patterns": ["参数不对", "参数值不对", "手机号必须是11位数字"]
     },
     {
@@ -44,7 +44,7 @@
         "name": "短信验证码-手机号12位数字",
         "mobile": "136112244555",
         "expected_status_code": 200,
-        "expected_errno": null,
+        "expected_errno": 402,
         "expected_errmsg_patterns": ["参数不对", "参数值不对", "手机号必须是11位数字"]
     },
     {
@@ -52,7 +52,7 @@
         "name": "短信验证码-手机号非数字",
         "mobile": "1361122445a",
         "expected_status_code": 200,
-        "expected_errno": null,
+        "expected_errno": 402,
         "expected_errmsg_patterns": ["参数不对", "参数值不对", "手机号必须是数字"]
     }
 ]

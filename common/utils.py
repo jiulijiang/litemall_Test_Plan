@@ -7,18 +7,32 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 def common_assert(response, status_code=200, errno=0, errmsg="成功"):
-    # 断言响应状态码为200
+    # 断言响应状态码为预期值
     assert response.status_code == status_code
-    # 断言响应数据中errno值为0
-    assert response.json().get("errno") == errno
-    # 断言响应数据中errmsg值为成功
-    assert errmsg in response.text
+    # 断言响应数据中errno值与预期一致
+    actual_errno = response.json().get("errno")
+    # 如果errno不为None，则进行断言
+    if errno is not None:
+        assert actual_errno == errno
+    # 断言响应数据中errmsg值包含预期的信息
+    if isinstance(errmsg, list):
+        # 如果errmsg是列表，检查响应文本是否包含列表中的任意一个元素
+        assert any(msg in response.text for msg in errmsg), f"响应文本不包含任何预期的错误消息: {errmsg}"
+    else:
+        # 如果errmsg是字符串，直接检查
+        assert errmsg in response.text, f"响应文本不包含预期的错误消息: {errmsg}"
 
 
 # 读取JSON文件
 def read_json_file(file_path):
     """读取JSON格式的测试数据文件"""
     try:
+        # 获取项目根目录
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        # 如果是相对路径，转换为绝对路径
+        if not os.path.isabs(file_path):
+            file_path = os.path.join(project_root, file_path)
+        
         # 检查文件是否存在
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"文件不存在: {file_path}")
