@@ -120,27 +120,7 @@ login_cases = [
 ]
 
 # 定义测试用例数据 - 退出登录模块
-logout_cases = [
-    # ID 10: 退出登录-已登录
-    {
-        "id": 10,
-        "name": "退出登录-已登录",
-        "need_login": True,
-        "expected_status_code": 200,
-        "expected_errno": 0,
-        "expected_errmsg_patterns": ["成功"]
-    },
-    # ID 11: 退出登录-未登录
-    {
-        "id": 11,
-        "name": "退出登录-未登录",
-        "need_login": False,
-        "token": None,
-        "expected_status_code": 200,
-        "expected_errno": 501,
-        "expected_errmsg_patterns": ["请登录"]
-    }
-]
+
 
 # 定义测试用例数据 - 获取用户信息模块
 user_info_cases = [

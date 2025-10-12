@@ -1,0 +1,19 @@
+[
+    {
+        "id": 10,
+        "name": "退出登录-已登录",
+        "need_login": true,
+        "expected_status_code": 200,
+        "expected_errno": 0,
+        "expected_errmsg_patterns": ["成功"]
+    },
+    {
+        "id": 11,
+        "name": "退出登录-未登录",
+        "need_login": false,
+        "token": null,
+        "expected_status_code": 200,
+        "expected_errno": 501,
+        "expected_errmsg_patterns": ["请登录"]
+    }
+]

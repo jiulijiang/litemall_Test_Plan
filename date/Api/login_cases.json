@@ -1,0 +1,93 @@
+[
+    {
+        "id": 0,
+        "name": "账号密码登录-正确凭据",
+        "username": "user123",
+        "password": "user123",
+        "expected_status_code": 200,
+        "expected_errno": 0,
+        "expected_errmsg_patterns": ["成功"],
+        "check_data": true
+    },
+    {
+        "id": 1,
+        "name": "账号密码登录-未注册账号",
+        "username": "notexist",
+        "password": "e10adc3949ba59abbe56e057f20f883e",
+        "expected_status_code": 200,
+        "expected_errno": null,
+        "expected_errmsg_patterns": ["账号不存在"]
+    },
+    {
+        "id": 2,
+        "name": "账号密码登录-错误密码",
+        "username": "user123",
+        "password": "wrongpassword",
+        "expected_status_code": 200,
+        "expected_errno": null,
+        "expected_errmsg_patterns": ["账号密码不对"]
+    },
+    {
+        "id": 3,
+        "name": "账号密码登录-空用户名",
+        "username": "",
+        "password": "e10adc3949ba59abbe56e057f20f883e",
+        "expected_status_code": 200,
+        "expected_errno": null,
+        "expected_errmsg_patterns": ["账号不存在"]
+    },
+    {
+        "id": 4,
+        "name": "账号密码登录-空密码",
+        "username": "user123",
+        "password": "",
+        "expected_status_code": 200,
+        "expected_errno": null,
+        "expected_errmsg_patterns": ["账号密码不对"]
+    },
+    {
+        "id": 5,
+        "name": "账号密码登录-超长账号",
+        "username": "user1234567890123456789012345678901234567890",
+        "password": "e10adc3949ba59abbe56e057f20f883e",
+        "expected_status_code": 200,
+        "expected_errno": null,
+        "expected_errmsg_patterns": ["账号不存在"]
+    },
+    {
+        "id": 6,
+        "name": "账号密码登录-特殊字符账号",
+        "username": "user*123",
+        "password": "e10adc3949ba59abbe56e057f20f883e",
+        "expected_status_code": 200,
+        "expected_errno": null,
+        "expected_errmsg_patterns": ["账号不存在"]
+    },
+    {
+        "id": 7,
+        "name": "手机号登录-正确手机号密码",
+        "username": "13800138000",
+        "password": "e10adc3949ba59abbe56e057f20f883e",
+        "expected_status_code": 200,
+        "expected_errno": null,
+        "expected_errmsg_patterns": ["账号不存在"]
+    },
+    {
+        "id": 8,
+        "name": "手机号登录-未注册手机号",
+        "username": "13800138999",
+        "password": "e10adc3949ba59abbe56e057f20f883e",
+        "expected_status_code": 200,
+        "expected_errno": null,
+        "expected_errmsg_patterns": ["账号不存在"]
+    },
+    {
+        "id": 9,
+        "name": "手机号登录-格式错误",
+        "username": "12345",
+        "password": "e10adc3949ba59abbe56e057f20f883e",
+        "expected_status_code": 200,
+        "expected_errno": null,
+        "expected_errmsg_patterns": ["账号不存在"]
+    }
+]
