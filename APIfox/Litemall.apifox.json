@@ -1,0 +1,3671 @@
+{
+  "apifoxProject": "1.0.0",
+  "$schema": {
+    "app": "apifox",
+    "type": "project",
+    "version": "1.2.0"
+  },
+  "info": {
+    "name": "Litemall",
+    "description": "",
+    "mockRule": {
+      "rules": [],
+      "enableSystemRule": true
+    }
+  },
+  "apiCollection": [
+    {
+      "name": "根目录",
+      "id": 67914476,
+      "auth": {},
+      "securityScheme": {},
+      "parentId": 0,
+      "serverId": "",
+      "description": "",
+      "identityPattern": {
+        "httpApi": {
+          "type": "methodAndPath",
+          "bodyType": "",
+          "fields": []
+        }
+      },
+      "shareSettings": {},
+      "visibility": "SHARED",
+      "moduleId": 6291309,
+      "preProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "postProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "inheritPostProcessors": {},
+      "inheritPreProcessors": {},
+      "items": [
+        {
+          "name": "单接口",
+          "id": 67915842,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 6291309,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "01.获取首页数据",
+              "api": {
+                "id": "360938416",
+                "method": "get",
+                "path": "/wx/home/index",
+                "parameters": {},
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787129479",
+                    "code": 200,
+                    "name": "成功",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 30,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787129479"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "02.获取短信验证码",
+              "api": {
+                "id": "360939125",
+                "method": "post",
+                "path": "/wx/auth/regCaptcha",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "DE6KnBepI0",
+                      "example": "application/json",
+                      "enable": true,
+                      "name": "Content-Type"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787129427",
+                    "code": 200,
+                    "name": "成功",
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n    \"mobile\": \"13606150002\"\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 40,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787129427"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "03.注册",
+              "api": {
+                "id": "360942010",
+                "method": "post",
+                "path": "/wx/auth/register",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "9nn9m1v431",
+                      "example": "application/json",
+                      "enable": true,
+                      "name": "Content-Type"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787131021",
+                    "code": 200,
+                    "name": "成功",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n    \"code\": \"666666\",\r\n    \"username\": \"jack102\",\r\n    \"password\": \"123456\",\r\n    \"repeatPassword\": \"123456\",\r\n    \"mobile\": \"13606150002\"\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 20,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787131021"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [
+                  {
+                    "type": "database",
+                    "data": {
+                      "name": "删除已存在用户名",
+                      "expression": "delete from litemall.litemall_user where username = 'jack102';",
+                      "variableType": "local",
+                      "extractFirstRecord": true,
+                      "connectionId": 120888
+                    },
+                    "defaultEnable": false,
+                    "enable": true,
+                    "id": "rxIbrZXy1nwdLuRvTaT-M",
+                    "executionTiming": "prerequest"
+                  }
+                ],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "04.登录",
+              "api": {
+                "id": "360942650",
+                "method": "post",
+                "path": "/wx/auth/login",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "BDievTvek3",
+                      "example": "application/json",
+                      "enable": true,
+                      "name": "Content-Type"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787156536",
+                    "code": 200,
+                    "name": "成功",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n    \"username\": \"user123\",\r\n    \"password\": \"user123\"\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 50,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787156536"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "Litemall_token",
+                      "variableType": "environment",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "05.搜索",
+              "api": {
+                "id": "360948202",
+                "method": "get",
+                "path": "/wx/goods/list",
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "LB9etqV0XZ",
+                      "name": "keyword",
+                      "example": "母亲节",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    },
+                    {
+                      "id": "09TbIQyu7c",
+                      "name": "page",
+                      "example": "1",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    },
+                    {
+                      "id": "16v5qAdDm7",
+                      "name": "limit",
+                      "example": "10",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    },
+                    {
+                      "id": "IKU3WVXsxl",
+                      "name": "categoryId",
+                      "example": "0",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787157401",
+                    "code": 200,
+                    "name": "成功",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 60,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787157401"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "Goods_id",
+                      "variableType": "environment",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.list[0].id",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "06.获取商品信息",
+              "api": {
+                "id": "360949260",
+                "method": "get",
+                "path": "/wx/goods/detail",
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "ifo7UUaZK9",
+                      "name": "id",
+                      "example": "{{Goods_id}}",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787167484",
+                    "code": 200,
+                    "name": "成功",
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 70,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787167484"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "07.获取购物车商品数量",
+              "api": {
+                "id": "360949694",
+                "method": "get",
+                "path": "/wx/cart/goodscount",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "Y1gM8CC16I",
+                      "example": "{{Litemall_token}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787148318",
+                    "code": 200,
+                    "name": "成功",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 80,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787148318"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "08.加入购物车",
+              "api": {
+                "id": "360952688",
+                "method": "post",
+                "path": "/wx/cart/add",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "BrmaqMhDEg",
+                      "example": "{{Litemall_token}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    },
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "nmawuMPBpB",
+                      "example": "application/json",
+                      "enable": true,
+                      "name": "Content-Type"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787164347",
+                    "code": 200,
+                    "name": "成功",
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n    \"goodsId\": {{Goods_id}},\r\n    \"number\": 5,\r\n    \"productId\": 2\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 90,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787164347"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "09.查看购物车",
+              "api": {
+                "id": "360953249",
+                "method": "get",
+                "path": "/wx/cart/index",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "oL5AbMwjIn",
+                      "example": "{{Goods_id}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787164253",
+                    "code": 200,
+                    "name": "成功",
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 100,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787164253"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "10.选中商品",
+              "api": {
+                "id": "360954176",
+                "method": "post",
+                "path": "/wx/cart/checked",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "LhQoOtye6S",
+                      "example": "{{Litemall_token}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    },
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "HcKarSZ2Am",
+                      "example": "application/json",
+                      "enable": true,
+                      "name": "Content-Type"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787157273",
+                    "code": 200,
+                    "name": "成功",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n    \"productIds\": [\r\n        232,\r\n        31\r\n    ],\r\n    \"isChecked\": 1\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 110,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787157273"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "11.结算商品",
+              "api": {
+                "id": "360957662",
+                "method": "get",
+                "path": "/wx/cart/checkout",
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "OhTaMAXyHJ",
+                      "name": "cartId",
+                      "example": "0",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    },
+                    {
+                      "id": "KoNpeYsn3Z",
+                      "name": "addressId",
+                      "example": "0",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    },
+                    {
+                      "id": "1pSoLWRYjA",
+                      "name": "couponId",
+                      "example": "0",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    },
+                    {
+                      "id": "c2kA29XB94",
+                      "name": "userCouponId",
+                      "example": "0",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    },
+                    {
+                      "id": "epfHTD3DUw",
+                      "name": "grouponRulesId",
+                      "example": "0",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    }
+                  ],
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "wJXEQIkNBC",
+                      "example": "{{Litemall_token}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787176388",
+                    "code": 200,
+                    "name": "成功",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 120,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787176388"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "12.添加地址",
+              "api": {
+                "id": "360958358",
+                "method": "post",
+                "path": "/wx/address/save",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "X9K5sUqMpV",
+                      "example": "{{Litemall_token}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    },
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "EyEg4r4QTX",
+                      "example": "application/json",
+                      "enable": true,
+                      "name": "Content-Type"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787169100",
+                    "code": 200,
+                    "name": "成功",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n    \"name\": \"jack001\",\r\n    \"tel\": \"13611224455\",\r\n    \"country\": \"China\",\r\n    \"province\": \"Beijing\",\r\n    \"city\": \"Beijing\",\r\n    \"county\": \"HaiDian\",\r\n    \"areaCode\": \"110101\",\r\n    \"postalCode\": \"100091\",\r\n    \"addressDetail\": \"heima\",\r\n    \"isDefault\": true\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 130,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787169100"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "13.查看地址",
+              "api": {
+                "id": "360959667",
+                "method": "get",
+                "path": "/wx/address/list",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "qhaXq1gWOe",
+                      "example": "{{Litemall_token}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787164457",
+                    "code": 200,
+                    "name": "成功",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 140,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787164457"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "14.提交订单",
+              "api": {
+                "id": "360960079",
+                "method": "post",
+                "path": "/wx/order/submit",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "6aYHYLMtaX",
+                      "example": "{{Litemall_token}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    },
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "lVn1S4HSEg",
+                      "example": "application/json",
+                      "enable": true,
+                      "name": "Content-Type"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787159122",
+                    "code": 200,
+                    "name": "成功",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n    \"addressId\": \"25\",\r\n    \"cartId\": \"0\",\r\n    \"couponId\": \"0\",\r\n    \"userCouponId\": \"0\",\r\n    \"grouponLinkId\": 0,\r\n    \"grouponRulesId\": 0,\r\n    \"message\": \"\"\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 150,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787159122"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "15.查看订单",
+              "api": {
+                "id": "360961367",
+                "method": "get",
+                "path": "/wx/order/list",
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "4yRQvN6lWM",
+                      "name": "showType",
+                      "example": "0",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    },
+                    {
+                      "id": "Y9zwjljWh3",
+                      "name": "page",
+                      "example": "1",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    },
+                    {
+                      "id": "SucMfMuvlh",
+                      "name": "limit",
+                      "example": "10",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    }
+                  ],
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "k9NpdrXsQY",
+                      "example": "{{Litemall_token}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787185936",
+                    "code": 200,
+                    "name": "成功",
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 160,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787185936"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "16.商品收藏",
+              "api": {
+                "id": "360962846",
+                "method": "post",
+                "path": "/wx/collect/addordelete",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "jZ5ibiKGjd",
+                      "example": "{{Litemall_token}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    },
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "xhq6XaseSY",
+                      "example": "application/json",
+                      "enable": true,
+                      "name": "Content-Type"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787185541",
+                    "code": 200,
+                    "name": "成功",
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n    \"valueId\": \"1023034\",\r\n    \"type\": 0\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 170,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787185541"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "17.我的收藏",
+              "api": {
+                "id": "360963866",
+                "method": "get",
+                "path": "/wx/user/index",
+                "parameters": {
+                  "header": [
+                    {
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "id": "FJO9BXRqXa",
+                      "example": "{{Litemall_token}}",
+                      "enable": true,
+                      "name": "X-Litemall-Token"
+                    }
+                  ]
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "787167427",
+                    "code": 200,
+                    "name": "成功",
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": true,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 180,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [
+                  "BLANK.787167427"
+                ],
+                "visibility": "INHERITED",
+                "moduleId": 6291309,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "socketCollection": [],
+  "docCollection": [],
+  "webSocketCollection": [],
+  "socketIOCollection": [],
+  "responseCollection": [
+    {
+      "_databaseId": 7583489,
+      "updatedAt": "2025-10-05T05:41:50.000Z",
+      "name": "根目录",
+      "type": "root",
+      "children": [],
+      "moduleId": 6291309,
+      "parentId": 0,
+      "id": 7583489,
+      "ordering": [],
+      "items": []
+    }
+  ],
+  "schemaCollection": [
+    {
+      "id": 16664368,
+      "name": "根目录",
+      "visibility": "SHARED",
+      "moduleId": 6291309,
+      "items": [],
+      "ordering": []
+    }
+  ],
+  "securitySchemeCollection": [
+    {
+      "id": 2175971,
+      "moduleId": 6291309,
+      "name": "根目录",
+      "items": [],
+      "ordering": []
+    }
+  ],
+  "requestCollection": [
+    {
+      "name": "根目录",
+      "children": [],
+      "ordering": [
+        "requestFolder.7688911"
+      ],
+      "items": []
+    }
+  ],
+  "apiTestCaseCollection": [
+    {
+      "name": "Root",
+      "children": [],
+      "items": [
+        {
+          "steps": [
+            {
+              "name": "04.登录",
+              "number": 1,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360942650,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308265906,
+                "name": "04.登录",
+                "method": "post",
+                "path": "/wx/auth/login",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "BDievTvek3",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787156536,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"username\": \"user123\",\r\n    \"password\": \"user123\"\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "yewu_token",
+                      "variableType": "local",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "Litemall_token",
+                      "variableType": "environment",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": false,
+                    "id": "Y4PDk6kgK7ovBG1ipkewU",
+                    "targetName": "04.登录",
+                    "targetId": 360942650,
+                    "targetType": "apiDetail",
+                    "apiMethod": "post",
+                    "isInheritDefaultEnable": false
+                  }
+                ],
+                "moduleId": 6291309,
+                "apiId": 360942650
+              }
+            },
+            {
+              "name": "05.搜索",
+              "number": 2,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360948202,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308265905,
+                "name": "05.搜索",
+                "method": "get",
+                "path": "/wx/goods/list",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "LB9etqV0XZ",
+                      "relatedId": "LB9etqV0XZ",
+                      "name": "keyword",
+                      "value": "母亲节",
+                      "enable": true,
+                      "description": "",
+                      "type": "string"
+                    },
+                    {
+                      "id": "09TbIQyu7c",
+                      "relatedId": "09TbIQyu7c",
+                      "name": "page",
+                      "value": "1",
+                      "enable": true,
+                      "description": "",
+                      "type": "string"
+                    },
+                    {
+                      "id": "16v5qAdDm7",
+                      "relatedId": "16v5qAdDm7",
+                      "name": "limit",
+                      "value": "10",
+                      "enable": true,
+                      "description": "",
+                      "type": "string"
+                    },
+                    {
+                      "id": "IKU3WVXsxl",
+                      "relatedId": "IKU3WVXsxl",
+                      "name": "categoryId",
+                      "value": "0",
+                      "enable": true,
+                      "description": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "responseId": 787157401,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "none",
+                  "data": ""
+                },
+                "preProcessors": [],
+                "postProcessors": [],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "Goods_id",
+                      "variableType": "environment",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.list[0].id",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": false,
+                    "id": "HwVYQi0hr473X6CoFgSok",
+                    "targetName": "05.搜索",
+                    "targetId": 360948202,
+                    "targetType": "apiDetail",
+                    "apiMethod": "get",
+                    "isInheritDefaultEnable": false
+                  }
+                ],
+                "moduleId": 6291309,
+                "apiId": 360948202
+              }
+            },
+            {
+              "name": "08.加入购物车",
+              "number": 3,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360952688,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308265904,
+                "name": "08.加入购物车",
+                "method": "post",
+                "path": "/wx/cart/add",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "BrmaqMhDEg",
+                      "relatedName": "X-Litemall-Token",
+                      "name": "X-Litemall-Token",
+                      "value": "{{yewu_token}}",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "nmawuMPBpB",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787164347,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"goodsId\": {{Goods_id}},\r\n    \"number\": 5,\r\n    \"productId\": 2\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [],
+                "moduleId": 6291309,
+                "apiId": 360952688
+              }
+            },
+            {
+              "name": "14.提交订单",
+              "number": 4,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360960079,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308265903,
+                "name": "14.提交订单",
+                "method": "post",
+                "path": "/wx/order/submit",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "6aYHYLMtaX",
+                      "relatedName": "X-Litemall-Token",
+                      "name": "X-Litemall-Token",
+                      "value": "{{yewu_token}}",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "lVn1S4HSEg",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787159122,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"addressId\": \"25\",\r\n    \"cartId\": \"0\",\r\n    \"couponId\": \"0\",\r\n    \"userCouponId\": \"0\",\r\n    \"grouponLinkId\": 0,\r\n    \"grouponRulesId\": 0,\r\n    \"message\": \"\"\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [],
+                "moduleId": 6291309,
+                "apiId": 360960079
+              }
+            },
+            {
+              "name": "15.查看订单",
+              "number": 5,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360961367,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308265902,
+                "name": "15.查看订单",
+                "method": "get",
+                "path": "/wx/order/list",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "4yRQvN6lWM",
+                      "relatedName": "showType",
+                      "name": "showType",
+                      "value": "0",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "Y9zwjljWh3",
+                      "relatedName": "page",
+                      "name": "page",
+                      "value": "1",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "SucMfMuvlh",
+                      "relatedName": "limit",
+                      "name": "limit",
+                      "value": "10",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "header": [
+                    {
+                      "id": "k9NpdrXsQY",
+                      "relatedName": "X-Litemall-Token",
+                      "name": "X-Litemall-Token",
+                      "value": "{{yewu_token}}",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787185936,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "none",
+                  "data": "",
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [],
+                "moduleId": 6291309,
+                "apiId": 360961367
+              }
+            }
+          ],
+          "id": 7383813,
+          "name": "下单业务流程冒烟测试",
+          "tags": [],
+          "options": {
+            "environmentId": 38516968,
+            "useDataSetId": -1,
+            "iterationCount": 1,
+            "threadCount": 1,
+            "runnerId": 0,
+            "onError": "ignore",
+            "delayItem": 0,
+            "saveReportDetail": "all",
+            "saveVariables": true,
+            "readGlobalCookie": false,
+            "saveGlobalCookie": false
+          },
+          "priority": 0,
+          "ordering": 10,
+          "description": "",
+          "preProcessors": [],
+          "postProcessors": [],
+          "children": [],
+          "performanceTestOptions": {},
+          "apiTestDataSets": []
+        },
+        {
+          "steps": [
+            {
+              "name": "05.搜索",
+              "number": 1,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360948202,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308269963,
+                "name": "05.搜索",
+                "method": "get",
+                "path": "/wx/goods/list",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "LB9etqV0XZ",
+                      "relatedName": "keyword",
+                      "name": "keyword",
+                      "value": "{{keyword}}",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "09TbIQyu7c",
+                      "relatedName": "page",
+                      "name": "page",
+                      "value": "1",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "16v5qAdDm7",
+                      "relatedName": "limit",
+                      "name": "limit",
+                      "value": "10",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "IKU3WVXsxl",
+                      "relatedName": "categoryId",
+                      "name": "categoryId",
+                      "value": "0",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "header": [],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787157401,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "none",
+                  "data": "",
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [
+                  {
+                    "type": "assertion",
+                    "data": {
+                      "name": "",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.errno",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      },
+                      "comparison": "equal",
+                      "value": "{{errno}}"
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  },
+                  {
+                    "type": "assertion",
+                    "data": {
+                      "name": "",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.errmsg",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      },
+                      "comparison": "include",
+                      "value": "{{errmsg}}"
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "Goods_id",
+                      "variableType": "environment",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.list[0].id",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": false,
+                    "id": "HwVYQi0hr473X6CoFgSok",
+                    "targetName": "05.搜索",
+                    "targetId": 360948202,
+                    "targetType": "apiDetail",
+                    "apiMethod": "get",
+                    "isInheritDefaultEnable": false
+                  }
+                ],
+                "moduleId": 6291309,
+                "apiId": 360948202
+              }
+            }
+          ],
+          "id": 7384046,
+          "name": "商品搜索功能测试",
+          "tags": [],
+          "options": {},
+          "priority": 1,
+          "ordering": 20,
+          "description": "",
+          "preProcessors": [],
+          "postProcessors": [],
+          "children": [],
+          "performanceTestOptions": {},
+          "apiTestDataSets": [
+            {
+              "id": 4050440,
+              "name": "搜索功能csv数据",
+              "relatedId": 7384046,
+              "apiTestDataList": [
+                {
+                  "id": 1086006,
+                  "data": "数据集名称,ID,keyword,errno,errmsg\n数据集-1,001,母亲,0,成功\n数据集-2,002,母亲节,0,成功\n数据集-3,003,父亲节,0,成功\n数据集-4,004,muqinjie,0,成功\n数据集-5,005,mother,0,成功\n数据集-6,006,母亲、，,0,成功\n数据集-7,007,好好学习、天天向上哈哈哈哈哈哈哈哈,0,成功\n数据集-8,008,黄赌毒,0,敏感词\n",
+                  "dataSetId": 4050440,
+                  "relatedId": 7384046,
+                  "relatedType": 0,
+                  "environmentId": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "steps": [
+            {
+              "name": "04.登录",
+              "number": 2,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360942650,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308274504,
+                "name": "04.登录",
+                "method": "post",
+                "path": "/wx/auth/login",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "BDievTvek3",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787156536,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"username\": \"user123\",\r\n    \"password\": \"user123\"\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "cart_token",
+                      "variableType": "local",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "Litemall_token",
+                      "variableType": "environment",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": false,
+                    "id": "Y4PDk6kgK7ovBG1ipkewU",
+                    "targetName": "04.登录",
+                    "targetId": 360942650,
+                    "targetType": "apiDetail",
+                    "apiMethod": "post",
+                    "isInheritDefaultEnable": false
+                  }
+                ],
+                "moduleId": 6291309,
+                "apiId": 360942650
+              }
+            },
+            {
+              "name": "09.查看购物车",
+              "number": 1,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360953249,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308274393,
+                "name": "09.查看购物车",
+                "method": "get",
+                "path": "/wx/cart/index",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "oL5AbMwjIn",
+                      "relatedName": "X-Litemall-Token",
+                      "name": "X-Litemall-Token",
+                      "value": "{{cart_token}}",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787164253,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "none",
+                  "data": "",
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [
+                  {
+                    "type": "assertion",
+                    "data": {
+                      "name": "",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.errno",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      },
+                      "comparison": "equal",
+                      "value": "0",
+                      "path": "$.errno"
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  },
+                  {
+                    "type": "assertion",
+                    "data": {
+                      "name": "",
+                      "subject": "responseText",
+                      "comparison": "include",
+                      "value": "成功"
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [],
+                "moduleId": 6291309,
+                "apiId": 360953249
+              }
+            }
+          ],
+          "id": 7384124,
+          "name": "获取购物车商品数量测试",
+          "tags": [],
+          "options": {
+            "environmentId": 38516968,
+            "useDataSetId": -1,
+            "iterationCount": 1,
+            "threadCount": 1,
+            "runnerId": 0,
+            "onError": "ignore",
+            "delayItem": 0,
+            "saveReportDetail": "all",
+            "saveVariables": true,
+            "readGlobalCookie": false,
+            "saveGlobalCookie": false
+          },
+          "priority": 1,
+          "ordering": 30,
+          "description": "",
+          "preProcessors": [],
+          "postProcessors": [],
+          "children": [],
+          "performanceTestOptions": {},
+          "apiTestDataSets": []
+        },
+        {
+          "steps": [
+            {
+              "name": "04.登录",
+              "number": 1,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360942650,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308276389,
+                "name": "04.登录",
+                "method": "post",
+                "path": "/wx/auth/login",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "BDievTvek3",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787156536,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"username\": \"user123\",\r\n    \"password\": \"user123\"\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "cart_token",
+                      "variableType": "local",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "Litemall_token",
+                      "variableType": "environment",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": false,
+                    "id": "Y4PDk6kgK7ovBG1ipkewU",
+                    "targetName": "04.登录",
+                    "targetId": 360942650,
+                    "targetType": "apiDetail",
+                    "apiMethod": "post",
+                    "isInheritDefaultEnable": false
+                  }
+                ],
+                "moduleId": 6291309,
+                "apiId": 360942650
+              }
+            },
+            {
+              "name": "08.加入购物车",
+              "number": 2,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360952688,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308276398,
+                "name": "08.加入购物车",
+                "method": "post",
+                "path": "/wx/cart/add",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "BrmaqMhDEg",
+                      "relatedName": "X-Litemall-Token",
+                      "name": "X-Litemall-Token",
+                      "value": "{{cart_token}}",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "nmawuMPBpB",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787164347,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"goodsId\": {{goodsId}},\r\n    \"number\": {{number}},\r\n    \"productId\": {{productId}}\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [
+                  {
+                    "type": "assertion",
+                    "data": {
+                      "name": "",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.errno",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      },
+                      "comparison": "equal",
+                      "value": "{{errno}}"
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  },
+                  {
+                    "type": "assertion",
+                    "data": {
+                      "name": "",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.errmsg",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      },
+                      "comparison": "equal",
+                      "value": "{{errmsg}}"
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [],
+                "moduleId": 6291309,
+                "apiId": 360952688
+              }
+            }
+          ],
+          "id": 7384142,
+          "name": "加入购物车测试",
+          "tags": [],
+          "options": {},
+          "priority": 1,
+          "ordering": 40,
+          "description": "",
+          "preProcessors": [],
+          "postProcessors": [],
+          "children": [],
+          "performanceTestOptions": {},
+          "apiTestDataSets": [
+            {
+              "id": 4050453,
+              "name": "数据 1",
+              "relatedId": 7384142,
+              "apiTestDataList": [
+                {
+                  "id": 1086021,
+                  "data": "数据集名称,goodsId,number,productId,errno,errmsg\n数据集-3,1181000,5,2,0,成功\n数据集-4,,5,2,0,商品ID不能为空\n数据集-5,999999,5,2,0,商品不存在\n数据集-6,1181000,,2,0,购买数量不能为空\n数据集-7,1181000,0,2,0,购买数量必须大于0\n数据集-8,1181000,-5,2,0,购买数量必须大于0\n数据集-9,1181000,1,2,0,成功\n数据集-10,1181000,50,2,0,成功\n数据集-11,1181000,200,2,0,成功\n数据集-12,1181000,201,2,0,购买数量不能超过200\n数据集-13,1181000,5,,0,产品ID不能为空\n数据集-14,1181000,5,0,0,成功\n数据集-15,1181000,5,1,0,成功\n数据集-16,1181000,5,2,0,成功\n数据集-17,1181000,5,3,0,成功\n数据集-18,1181000,5,4,0,成功\n数据集-19,1181000,5,5,0,成功\n数据集-20,1181000,5,6,0,成功\n数据集-21,1181000,5,7,0,成功\n数据集-22,1181000,5,8,0,成功\n数据集-23,1181000,5,9,0,成功\n数据集-24,1181000,5,10,非0,产品ID必须为0-9之间的数字\n数据集-25,1181000,5,abc,非0,产品ID必须为数字\n",
+                  "dataSetId": 4050453,
+                  "relatedId": 7384142,
+                  "relatedType": 0,
+                  "environmentId": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "steps": [
+            {
+              "name": "04.登录",
+              "number": 1,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360942650,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308281481,
+                "name": "04.登录",
+                "method": "post",
+                "path": "/wx/auth/login",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "BDievTvek3",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787156536,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"username\": \"user123\",\r\n    \"password\": \"user123\"\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "order_token",
+                      "variableType": "local",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 1
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "Litemall_token",
+                      "variableType": "environment",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": false,
+                    "id": "Y4PDk6kgK7ovBG1ipkewU",
+                    "targetName": "04.登录",
+                    "targetId": 360942650,
+                    "targetType": "apiDetail",
+                    "apiMethod": "post",
+                    "isInheritDefaultEnable": false
+                  }
+                ],
+                "moduleId": 6291309,
+                "apiId": 360942650
+              }
+            },
+            {
+              "name": "08.加入购物车",
+              "number": 2,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360952688,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308281480,
+                "name": "08.加入购物车",
+                "method": "post",
+                "path": "/wx/cart/add",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "BrmaqMhDEg",
+                      "relatedName": "X-Litemall-Token",
+                      "name": "X-Litemall-Token",
+                      "value": "{{order_token}}",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "nmawuMPBpB",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787164347,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"goodsId\": 1181000,\r\n    \"number\": 5,\r\n    \"productId\": 2\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 1
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [],
+                "moduleId": 6291309,
+                "apiId": 360952688
+              }
+            },
+            {
+              "name": "14.提交订单",
+              "number": 3,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360960079,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308281479,
+                "name": "14.提交订单",
+                "method": "post",
+                "path": "/wx/order/submit",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "6aYHYLMtaX",
+                      "relatedName": "X-Litemall-Token",
+                      "name": "X-Litemall-Token",
+                      "value": "{{order_token}}",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "lVn1S4HSEg",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787159122,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"addressId\": \"{{addressId}}\",\r\n    \"cartId\": \"{{cartId}}\",\r\n    \"couponId\": \"{{couponId}}\",\r\n    \"userCouponId\": \"{{userCouponId}}\",\r\n    \"grouponLinkId\": {{grouponLinkId}},\r\n    \"grouponRulesId\": {{grouponRulesId}},\r\n    \"message\": \"{{message}}\"\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [
+                  {
+                    "type": "assertion",
+                    "data": {
+                      "name": "",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.errno",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      },
+                      "comparison": "equal",
+                      "value": "{{errno}}"
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  },
+                  {
+                    "type": "assertion",
+                    "data": {
+                      "name": "",
+                      "subject": "responseText",
+                      "comparison": "include",
+                      "value": "{{errmsg}}"
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [],
+                "moduleId": 6291309,
+                "apiId": 360960079
+              }
+            }
+          ],
+          "id": 7384208,
+          "name": "提交订单测试",
+          "tags": [],
+          "options": {
+            "environmentId": 38516968,
+            "useDataSetId": 4050459,
+            "iterationCount": 1,
+            "threadCount": 1,
+            "runnerId": 0,
+            "onError": "ignore",
+            "delayItem": 0,
+            "saveReportDetail": "all",
+            "saveVariables": true,
+            "readGlobalCookie": false,
+            "saveGlobalCookie": false
+          },
+          "priority": 1,
+          "ordering": 50,
+          "description": "",
+          "preProcessors": [],
+          "postProcessors": [],
+          "children": [],
+          "performanceTestOptions": {},
+          "apiTestDataSets": [
+            {
+              "id": 4050459,
+              "name": "数据 1",
+              "relatedId": 7384208,
+              "apiTestDataList": [
+                {
+                  "id": 1086027,
+                  "data": "数据集名称,addressId,cartId,couponId,userCouponId,grouponLinkId,grouponRulesId,message,errno,errmsg\n数据集-1,25,0,0,0,0,0,,0,成功\n数据集-2,25,0,0,0,0,0,,0,成功\n数据集-3,,0,0,0,0,0,,非0,地址信息不正确\n数据集-4,999999,0,0,0,0,0,,非0,地址不存在\n数据集-5,25,,0,0,0,0,,非0,购物车ID不能为空\n数据集-6,25,0,,0,0,0,,非0,优惠券ID不能为空\n数据集-7,25,0,0,,0,0,,非0,用户优惠券ID不能为空\n数据集-8,25,0,0,0,,0,,非0,团购链接ID不能为空\n数据集-9,25,0,0,0,abc,0,,非0,团购链接ID必须为数字\n数据集-10,25,0,0,0,0,,,非0,团购规则ID不能为空\n数据集-11,25,0,0,0,0,abc,,非0,团购规则ID必须为数字\n数据集-13,25,0,0,0,0,0,,非0,购物车为空\n数据集-14,25,0,999999,0,0,0,,非0,优惠券无效\n",
+                  "dataSetId": 4050459,
+                  "relatedId": 7384208,
+                  "relatedType": 0,
+                  "environmentId": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "steps": [
+            {
+              "name": "04.登录",
+              "number": 1,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360942650,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308299931,
+                "name": "04.登录",
+                "method": "post",
+                "path": "/wx/auth/login",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "BDievTvek3",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787156536,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"username\": \"user123\",\r\n    \"password\": \"user123\"\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "address_token",
+                      "variableType": "local",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 1
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [
+                  {
+                    "type": "extractor",
+                    "data": {
+                      "variableName": "Litemall_token",
+                      "variableType": "environment",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.data.token",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      }
+                    },
+                    "defaultEnable": false,
+                    "enable": false,
+                    "id": "57ioznXjNwI74jRLWf4hC",
+                    "targetName": "04.登录",
+                    "targetId": 360942650,
+                    "targetType": "apiDetail",
+                    "apiMethod": "post",
+                    "isInheritDefaultEnable": false
+                  }
+                ],
+                "moduleId": 6291309,
+                "apiId": 360942650
+              }
+            },
+            {
+              "name": "12.添加地址",
+              "number": 2,
+              "type": "http",
+              "bind": false,
+              "disable": false,
+              "bindType": "API",
+              "bindId": 360958358,
+              "syncMode": "MANUAL",
+              "httpApiCase": {
+                "id": 308299930,
+                "name": "12.添加地址",
+                "method": "post",
+                "path": "/wx/address/save",
+                "auth": {},
+                "type": "http",
+                "options": {},
+                "parameters": {
+                  "query": [],
+                  "header": [
+                    {
+                      "id": "X9K5sUqMpV",
+                      "relatedName": "X-Litemall-Token",
+                      "name": "X-Litemall-Token",
+                      "value": "{{address_token}}",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    },
+                    {
+                      "id": "EyEg4r4QTX",
+                      "relatedName": "Content-Type",
+                      "name": "Content-Type",
+                      "value": "application/json",
+                      "type": "string",
+                      "description": "",
+                      "enable": true,
+                      "isDelete": false
+                    }
+                  ],
+                  "cookie": [],
+                  "path": []
+                },
+                "responseId": 787169100,
+                "requestBody": {
+                  "parameters": [],
+                  "type": "application/json",
+                  "data": "{\r\n    \"name\": \"{{name}}\",\r\n    \"tel\": \"{{tel}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"province\": \"{{province}}\",\r\n    \"city\": \"{{city}}\",\r\n    \"county\": \"{{county}}\",\r\n    \"areaCode\": \"{{areaCode}}\",\r\n    \"postalCode\": \"{{postalCode}}\",\r\n    \"addressDetail\": \"{{addressDetail}}\",\r\n    \"isDefault\": {{isDefault}}\r\n}",
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "generateMode": "normal"
+                },
+                "preProcessors": [
+                  {
+                    "type": "placeholder",
+                    "renderType": "dynamicValueDivider",
+                    "defaultEnable": false,
+                    "enable": false
+                  }
+                ],
+                "postProcessors": [
+                  {
+                    "type": "assertion",
+                    "data": {
+                      "name": "",
+                      "subject": "responseJson",
+                      "extractSettings": {
+                        "expression": "$.errno",
+                        "continueExtractorSettings": {
+                          "isContinueExtractValue": false,
+                          "JsonArrayValueIndexValue": ""
+                        }
+                      },
+                      "comparison": "equal",
+                      "value": "{{errno}}"
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  },
+                  {
+                    "type": "assertion",
+                    "data": {
+                      "name": "",
+                      "subject": "responseText",
+                      "comparison": "include",
+                      "value": "{{errmsg}}"
+                    },
+                    "defaultEnable": false,
+                    "enable": true
+                  }
+                ],
+                "advancedSettings": {
+                  "disabledSystemHeaders": {},
+                  "isDefaultUrlEncoding": 2,
+                  "disableUrlEncoding": false
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "header": [],
+                  "cookie": []
+                },
+                "inheritPreProcessors": {},
+                "inheritPostProcessors": {},
+                "inheritPreProcessorsSnapshot": [],
+                "inheritPostProcessorsSnapshot": [],
+                "moduleId": 6291309,
+                "apiId": 360958358
+              }
+            }
+          ],
+          "id": 7384373,
+          "name": "添加地址接口测试",
+          "tags": [],
+          "options": {},
+          "priority": 1,
+          "ordering": 60,
+          "description": "",
+          "preProcessors": [],
+          "postProcessors": [],
+          "children": [],
+          "performanceTestOptions": {},
+          "apiTestDataSets": [
+            {
+              "id": 4050494,
+              "name": "数据 1",
+              "relatedId": 7384373,
+              "apiTestDataList": [
+                {
+                  "id": 1086074,
+                  "data": "数据集名称,name,tel,country,province,city,county,areaCode,postalCode,addressDetail,isDefault,errno,errmsg\n数据集-1,jack001,13611224455,China,Beijing,Beijing,HaiDian,110101,100091,heima,true,0,成功\n数据集-2,,13611224455,China,Beijing,Beijing,HaiDian,110101,100091,heima,true,0,姓名不能为空\n数据集-3,abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz,13611224455,China,Beijing,Beijing,HaiDian,110101,100091,heima,true,0,姓名长度不能超过64个字符\n数据集-4,jack001,,China,Beijing,Beijing,HaiDian,110101,100091,heima,true,0,手机号不能为空\n数据集-5,jack001,1361122445,China,Beijing,Beijing,HaiDian,110101,100091,heima,true,0,手机号必须是11位数字\n数据集-6,jack001,1361122445a,China,Beijing,Beijing,HaiDian,110101,100091,heima,true,0,手机号必须是数字\n数据集-7,jack001,23611224455,China,Beijing,Beijing,HaiDian,110101,100091,heima,true,0,手机号格式不正确\n数据集-8,jack001,11611224455,China,Beijing,Beijing,HaiDian,110101,100091,heima,true,0,手机号格式不正确\n数据集-9,jack001,13611224455,China,,Beijing,HaiDian,110101,100091,heima,true,0,请选择省份\n数据集-10,jack001,13611224455,China,Beijing,,HaiDian,110101,100091,heima,true,0,请选择城市\n数据集-11,jack001,13611224455,China,Beijing,Beijing,,110101,100091,heima,true,0,请选择区县\n数据集-12,jack001,13611224455,China,Beijing,Beijing,HaiDian,,100091,heima,true,0,地区码不能为空\n数据集-13,jack001,13611224455,China,Beijing,Beijing,HaiDian,11010,100091,heima,true,0,地区码必须是6位数字\n数据集-14,jack001,13611224455,China,Beijing,Beijing,HaiDian,11010a,100091,heima,true,0,地区码必须是数字\n数据集-15,jack001,13611224455,China,Beijing,Beijing,HaiDian,110101,,heima,true,0,邮编不能为空\n数据集-16,jack001,13611224455,China,Beijing,Beijing,HaiDian,110101,10009,heima,true,0,邮编必须是6位数字\n数据集-17,jack001,13611224455,China,Beijing,Beijing,HaiDian,110101,10009a,heima,true,0,邮编必须是数字\n数据集-18,jack001,13611224455,China,Beijing,Beijing,HaiDian,110101,100091,,true,0,详细地址不能为空\n数据集-19,jack001,13611224455,China,Beijing,Beijing,HaiDian,110101,100091,abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz,true,0,详细地址长度不能超过100个字符\n数据集-20,jack001,13611224455,China,Beijing,Beijing,HaiDian,110101,100091,heima,,0,默认地址参数错误\n数据集-21,jack001,13611224455,China,Beijing,Beijing,HaiDian,110101,100091,heima,True,0,成功\n",
+                  "dataSetId": 4050494,
+                  "relatedId": 7384373,
+                  "relatedType": 0,
+                  "environmentId": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "testCaseReferences": [],
+  "environments": [],
+  "commonScripts": [],
+  "databaseConnections": [
+    {
+      "name": "轻商城",
+      "type": "mysql",
+      "description": "",
+      "configs": {},
+      "id": "120888"
+    }
+  ],
+  "globalVariables": [],
+  "commonParameters": null,
+  "projectSetting": {
+    "id": "7243162",
+    "auth": {},
+    "securityScheme": {},
+    "gateway": [],
+    "language": "zh-CN",
+    "apiStatuses": [
+      "developing",
+      "testing",
+      "released",
+      "deprecated"
+    ],
+    "mockSettings": {},
+    "preProcessors": [],
+    "postProcessors": [],
+    "advancedSettings": {
+      "enableJsonc": false,
+      "enableBigint": false,
+      "responseValidate": true,
+      "enableTestScenarioSetting": false,
+      "enableYAPICompatScript": false,
+      "isDefaultUrlEncoding": 2,
+      "publishedDocUrlRules": {
+        "defaultRule": "RESOURCE_KEY_ONLY",
+        "resourceKeyStandard": "NEW"
+      }
+    },
+    "initialDisabledMockIds": [],
+    "servers": [
+      {
+        "id": "default",
+        "name": "默认服务"
+      },
+      {
+        "id": "b517ad45-45e9-47f8-a95d-1474584c9590",
+        "name": "后台"
+      }
+    ],
+    "cloudMock": {
+      "security": "free",
+      "enable": false,
+      "tokenKey": "apifoxToken"
+    }
+  },
+  "customFunctions": [],
+  "projectTestCaseCategories": [
+    {
+      "id": 2786006,
+      "name": "正向",
+      "description": "有效的输入和正确的预期结果，代表典型的用法。"
+    },
+    {
+      "id": 2786007,
+      "name": "负向",
+      "description": "消极的、无效的输入，如缺少字段、错误的类型、不支持的方法等。"
+    },
+    {
+      "id": 2786008,
+      "name": "边界值",
+      "description": "极端或边缘条件，如最大字符串长度、空值、零、null等"
+    },
+    {
+      "id": 2786009,
+      "name": "安全性",
+      "description": "可能暴露API安全性风险的测试用例。"
+    },
+    {
+      "id": 2786010,
+      "name": "其他",
+      "description": "其他未归属的测试用例。"
+    }
+  ],
+  "projectTestCaseTags": [],
+  "projectAssociations": [],
+  "moduleSettings": [
+    {
+      "id": "6291309",
+      "name": "默认模块",
+      "description": "",
+      "moduleVariables": [],
+      "openApiInfo": {}
+    }
+  ]
+}
