@@ -4,6 +4,7 @@ import pytest
 
 # 添加项目根目录到路径
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
 from UI.Mod03_goodsSearch import GoodsSearch
 from UI.wd_init import WD_init
 from common.utils import read_json_as_dict

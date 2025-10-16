@@ -3,9 +3,9 @@ import sys
 import pytest
 
 # 添加项目根目录到系统路径
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import config
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
+import config
 from UI.Mod02_usrLogin import UserLogin
 from UI.Mod04_Cart import Cart
 from UI.Mod05_order import Order

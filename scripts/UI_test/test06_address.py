@@ -1,12 +1,13 @@
 import os
 import sys
 import pytest
+import time
 
 # 添加项目根目录到系统路径
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-from UI.Mod06_address import Address
 from UI.wd_init import WD_init
+from UI.Mod06_address import Address
 from common.utils import read_json_as_dict
 
 
