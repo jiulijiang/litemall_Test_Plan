@@ -1,0 +1,82 @@
+[
+  {
+    "case_id": "Cart001",
+    "case_title": "成功添加商品到购物车（数量1）",
+    "spec": 1,
+    "goods_num": 1,
+    "screenshot_num": 1,
+    "expected_result": "商品成功加入购物车，购物车图标上的数量更新为1"
+  },
+  {
+    "case_id": "Cart002",
+    "case_title": "成功添加商品到购物车（数量50）",
+    "spec": 1,
+    "goods_num": 50,
+    "screenshot_num": 2,
+    "expected_result": "商品成功加入购物车，购物车图标上的数量更新为50"
+  },
+  {
+    "case_id": "Cart003",
+    "case_title": "成功添加商品到购物车（数量150）",
+    "spec": 1,
+    "goods_num": 150,
+    "screenshot_num": 3,
+    "expected_result": "商品成功加入购物车，购物车图标上的数量更新为150"
+  },
+  {
+    "case_id": "Cart004",
+    "case_title": "成功添加商品到购物车（数量200）",
+    "spec": 1,
+    "goods_num": 200,
+    "screenshot_num": 4,
+    "expected_result": "商品成功加入购物车，购物车图标上的数量更新为200"
+  },
+  {
+    "case_id": "Cart005",
+    "case_title": "成功添加不同规格商品到购物车（规格1）",
+    "spec": 1,
+    "goods_num": 2,
+    "screenshot_num": 5,
+    "expected_result": "商品成功加入购物车，购物车图标上的数量更新为2"
+  },
+  {
+    "case_id": "Cart006",
+    "case_title": "成功添加不同规格商品到购物车（规格2）",
+    "spec": 2,
+    "goods_num": 2,
+    "screenshot_num": 6,
+    "expected_result": "商品成功加入购物车，购物车图标上的数量更新为2"
+  },
+  {
+    "case_id": "Cart007",
+    "case_title": "成功添加不同规格商品到购物车（规格3）",
+    "spec": 3,
+    "goods_num": 2,
+    "screenshot_num": 7,
+    "expected_result": "商品成功加入购物车，购物车图标上的数量更新为2"
+  },
+  {
+    "case_id": "Cart008",
+    "case_title": "成功添加不同规格商品到购物车（规格4）",
+    "spec": 4,
+    "goods_num": 2,
+    "screenshot_num": 8,
+    "expected_result": "商品成功加入购物车，购物车图标上的数量更新为2"
+  },
+  {
+    "case_id": "Cart009",
+    "case_title": "成功添加不同规格商品到购物车（规格5）",
+    "spec": 5,
+    "goods_num": 2,
+    "screenshot_num": 9,
+    "expected_result": "商品成功加入购物车，购物车图标上的数量更新为2"
+  },
+  {
+    "case_id": "Cart010",
+    "case_title": "成功添加不同规格商品到购物车（规格6）",
+    "spec": 6,
+    "goods_num": 2,
+    "screenshot_num": 10,
+    "expected_result": "商品成功加入购物车，购物车图标上的数量更新为2"
+  }
+]

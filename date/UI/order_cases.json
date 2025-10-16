@@ -1,0 +1,62 @@
+[
+    {
+        "case_id": "Order001",
+        "case_title": "提交订单成功（全部参数填写正确）",
+        "screenshot_num": 1,
+        "expected_result": "订单提交成功，页面跳转至支付页面"
+    },
+    {
+        "case_id": "Order002",
+        "case_title": "提交订单成功（全部必填参数填写正确）",
+        "screenshot_num": 2,
+        "expected_result": "订单提交成功，页面跳转至支付页面"
+    },
+    {
+        "case_id": "Order003",
+        "case_title": "提交订单成功（测试场景3）",
+        "screenshot_num": 3,
+        "expected_result": "订单提交成功，页面跳转至支付页面"
+    },
+    {
+        "case_id": "Order004",
+        "case_title": "提交订单成功（测试场景4）",
+        "screenshot_num": 4,
+        "expected_result": "订单提交成功，页面跳转至支付页面"
+    },
+    {
+        "case_id": "Order005",
+        "case_title": "提交订单成功（测试场景5）",
+        "screenshot_num": 5,
+        "expected_result": "订单提交成功，页面跳转至支付页面"
+    },
+    {
+        "case_id": "Order006",
+        "case_title": "提交订单成功（测试场景6）",
+        "screenshot_num": 6,
+        "expected_result": "订单提交成功，页面跳转至支付页面"
+    },
+    {
+        "case_id": "Order007",
+        "case_title": "提交订单成功（测试场景7）",
+        "screenshot_num": 7,
+        "expected_result": "订单提交成功，页面跳转至支付页面"
+    },
+    {
+        "case_id": "Order008",
+        "case_title": "提交订单成功（测试场景8）",
+        "screenshot_num": 8,
+        "expected_result": "订单提交成功，页面跳转至支付页面"
+    },
+    {
+        "case_id": "Order009",
+        "case_title": "提交订单成功（测试场景9）",
+        "screenshot_num": 9,
+        "expected_result": "订单提交成功，页面跳转至支付页面"
+    },
+    {
+        "case_id": "Order010",
+        "case_title": "提交订单成功（测试场景10）",
+        "screenshot_num": 10,
+        "expected_result": "订单提交成功，页面跳转至支付页面"
+    }
+]

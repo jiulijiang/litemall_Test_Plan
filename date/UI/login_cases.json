@@ -1,0 +1,52 @@
+{
+  "test_cases": [
+    {
+      "case_id": "Login001",
+      "case_title": "成功登录流程",
+      "user_name": "jack0011",
+      "user_password": "123456",
+      "screenshot_num": 1,
+      "expected_result": "登录成功，跳转至首页，显示用户信息"
+    },
+    {
+      "case_id": "Login002",
+      "case_title": "登录失败-用户名不存在",
+      "user_name": "notexist",
+      "user_password": "123456",
+      "screenshot_num": 2,
+      "expected_result": "登录失败，提示\"用户名不存在\""
+    },
+    {
+      "case_id": "Login003",
+      "case_title": "登录失败-密码错误",
+      "user_name": "jack0011",
+      "user_password": "Wrong@123",
+      "screenshot_num": 3,
+      "expected_result": "登录失败，提示\"密码错误\""
+    },
+    {
+      "case_id": "Login004",
+      "case_title": "登录失败-用户名为空",
+      "user_name": "",
+      "user_password": "123456",
+      "screenshot_num": 4,
+      "expected_result": "登录失败，提示\"用户名或密码不能为空\""
+    },
+    {
+      "case_id": "Login004_1",
+      "case_title": "登录失败-密码为空",
+      "user_name": "jack0011",
+      "user_password": "",
+      "screenshot_num": 5,
+      "expected_result": "登录失败，提示\"用户名或密码不能为空\""
+    },
+    {
+      "case_id": "Login004_2",
+      "case_title": "登录失败-用户名和密码都为空",
+      "user_name": "",
+      "user_password": "",
+      "screenshot_num": 6,
+      "expected_result": "登录失败，提示\"用户名或密码不能为空\""
+    }
+  ]
+}

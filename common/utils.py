@@ -52,6 +52,50 @@ def read_json_file(file_path):
         print(f"读取文件时发生错误: {e}")
         return []
 
+# 读取json文件，返回列表嵌套字典
+def read_json_as_dict(file_path):
+    """读取JSON格式的测试数据文件，返回列表嵌套字典格式的数据
+    
+    Args:
+        file_path (str): JSON文件路径（支持相对路径和绝对路径）
+        
+    Returns:
+        list: 测试数据列表，每个元素是包含测试数据的字典
+    """
+    try:
+        # 获取项目根目录
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        # 如果是相对路径，转换为绝对路径
+        if not os.path.isabs(file_path):
+            file_path = os.path.join(project_root, file_path)
+        
+        # 检查文件是否存在
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"文件不存在: {file_path}")
+
+        # 读取JSON文件
+        with open(file_path, "r", encoding="utf-8") as f:
+            # 读取JSON文件内容
+            test_data = json.load(f)
+            
+            # 确保返回的数据格式为列表
+            if not isinstance(test_data, list):
+                # 如果读取的数据不是列表，检查是否是字典且包含test_cases键
+                if isinstance(test_data, dict) and 'test_cases' in test_data:
+                    test_data = test_data['test_cases']
+                else:
+                    # 否则将数据包装成列表返回
+                    test_data = [test_data]
+                    
+        return test_data
+            
+    except json.JSONDecodeError as e:
+        print(f"JSON解析错误: {e}")
+        return []
+    except Exception as e:
+        print(f"读取文件时发生错误: {e}")
+        return []
+
 
 # 读取CSV文件
 def read_csv_file(file_path):
