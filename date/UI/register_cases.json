@@ -7,7 +7,7 @@
     "user_name": "user@001",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册成功，用户账号创建，跳转至登录页面",
+    "expected_result": ["注册成功", "用户账号创建", "跳转至登录页面"],
     "screenshot_num": 1
   },
   {
@@ -18,7 +18,7 @@
     "user_name": "user",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册成功，用户账号创建，跳转至登录页面",
+    "expected_result": ["注册成功", "用户账号创建", "跳转至登录页面"],
     "screenshot_num": 2
   },
   {
@@ -29,7 +29,7 @@
     "user_name": "user1234567890123456789",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册成功，用户账号创建，跳转至登录页面",
+    "expected_result": ["注册成功", "用户账号创建", "跳转至登录页面"],
     "screenshot_num": 3
   },
   {
@@ -40,7 +40,7 @@
     "user_name": "use",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"用户名长度应为4-20位\"",
+    "expected_result": ["注册失败", "用户名长度应为4-20位"],
     "screenshot_num": 4
   },
   {
@@ -51,7 +51,7 @@
     "user_name": "user12345678901234567890",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"用户名长度应为4-20位\"",
+    "expected_result": ["注册失败", "用户名长度应为4-20位"],
     "screenshot_num": 5
   },
   {
@@ -62,7 +62,7 @@
     "user_name": "user@123",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"用户名只能包含字母、数字、下划线\"",
+    "expected_result": ["注册失败", "用户名只能包含字母、数字、下划线"],
     "screenshot_num": 6
   },
   {
@@ -73,7 +73,7 @@
     "user_name": "user测试",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"用户名只能包含字母、数字、下划线\"",
+    "expected_result": ["注册失败", "用户名只能包含字母、数字、下划线"],
     "screenshot_num": 7
   },
   {
@@ -84,7 +84,7 @@
     "user_name": "user123",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"用户名已存在\"",
+    "expected_result": ["注册失败", "用户名已存在"],
     "screenshot_num": 8
   },
   {
@@ -95,7 +95,7 @@
     "user_name": "",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"用户名不能为空\"",
+    "expected_result": ["注册失败", "用户名不能为空"],
     "screenshot_num": 9
   },
   {
@@ -106,7 +106,7 @@
     "user_name": "user@010",
     "user_password": "Pass1",
     "re_password": "Pass1",
-    "expected_result": "注册成功，用户账号创建，跳转至登录页面",
+    "expected_result": ["注册成功", "用户账号创建", "跳转至登录页面"],
     "screenshot_num": 10
   },
   {
@@ -117,7 +117,7 @@
     "user_name": "user@011",
     "user_password": "Pass12345678",
     "re_password": "Pass12345678",
-    "expected_result": "注册成功，用户账号创建，跳转至登录页面",
+    "expected_result": ["注册成功", "用户账号创建", "跳转至登录页面"],
     "screenshot_num": 11
   },
   {
@@ -128,7 +128,7 @@
     "user_name": "user@012",
     "user_password": "Pass",
     "re_password": "Pass",
-    "expected_result": "注册失败，提示\"密码长度应为6-12位\"",
+    "expected_result": ["注册失败", "密码长度应为6-12位"],
     "screenshot_num": 12
   },
   {
@@ -139,7 +139,7 @@
     "user_name": "user@013",
     "user_password": "Pass123456789",
     "re_password": "Pass123456789",
-    "expected_result": "注册失败，提示\"密码长度应为6-12位\"",
+    "expected_result": ["注册失败", "密码长度应为6-12位"],
     "screenshot_num": 13
   },
   {
@@ -150,7 +150,7 @@
     "user_name": "user@014",
     "user_password": "123456",
     "re_password": "123456",
-    "expected_result": "注册失败，提示\"密码必须包含字母和数字\"",
+    "expected_result": ["注册失败", "密码必须包含字母和数字"],
     "screenshot_num": 14
   },
   {
@@ -161,7 +161,7 @@
     "user_name": "user@015",
     "user_password": "Password",
     "re_password": "Password",
-    "expected_result": "注册失败，提示\"密码必须包含字母和数字\"",
+    "expected_result": ["注册失败", "密码必须包含字母和数字"],
     "screenshot_num": 15
   },
   {
@@ -172,7 +172,7 @@
     "user_name": "user@016",
     "user_password": "",
     "re_password": "",
-    "expected_result": "注册失败，提示\"密码不能为空\"",
+    "expected_result": ["注册失败", "密码不能为空"],
     "screenshot_num": 16
   },
   {
@@ -183,7 +183,7 @@
     "user_name": "user@017",
     "user_password": "User123",
     "re_password": "User456",
-    "expected_result": "注册失败，提示\"两次输入密码不一致\"",
+    "expected_result": ["注册失败", "两次输入密码不一致"],
     "screenshot_num": 17
   },
   {
@@ -194,7 +194,7 @@
     "user_name": "user@018",
     "user_password": "User123",
     "re_password": "",
-    "expected_result": "注册失败，提示\"确认密码不能为空\"",
+    "expected_result": ["注册失败", "确认密码不能为空"],
     "screenshot_num": 18
   },
   {
@@ -205,7 +205,7 @@
     "user_name": "user@019",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"手机号已注册\"",
+    "expected_result": ["注册失败", "手机号已注册"],
     "screenshot_num": 19
   },
   {
@@ -216,7 +216,7 @@
     "user_name": "user@020",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"手机号不能为空\"",
+    "expected_result": ["注册失败", "手机号不能为空"],
     "screenshot_num": 20
   },
   {
@@ -227,7 +227,7 @@
     "user_name": "user@021",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"手机号格式不正确\"",
+    "expected_result": ["注册失败", "手机号格式不正确"],
     "screenshot_num": 21
   },
   {
@@ -238,7 +238,7 @@
     "user_name": "user@022",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"手机号格式不正确\"",
+    "expected_result": ["注册失败", "手机号格式不正确"],
     "screenshot_num": 22
   },
   {
@@ -249,7 +249,7 @@
     "user_name": "user@023",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"手机号格式不正确\"",
+    "expected_result": ["注册失败", "手机号格式不正确"],
     "screenshot_num": 23
   },
   {
@@ -260,7 +260,7 @@
     "user_name": "user@024",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"手机号格式不正确\"",
+    "expected_result": ["注册失败", "手机号格式不正确"],
     "screenshot_num": 24
   },
   {
@@ -271,7 +271,7 @@
     "user_name": "user@025",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"手机号格式不正确\"",
+    "expected_result": ["注册失败", "手机号格式不正确"],
     "screenshot_num": 25
   },
   {
@@ -282,7 +282,7 @@
     "user_name": "user@026",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"验证码不能为空\"",
+    "expected_result": ["注册失败", "验证码不能为空"],
     "screenshot_num": 26
   },
   {
@@ -293,7 +293,7 @@
     "user_name": "user@027",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"验证码错误\"",
+    "expected_result": ["注册失败", "验证码错误"],
     "screenshot_num": 27
   },
   {
@@ -304,7 +304,7 @@
     "user_name": "user@028",
     "user_password": "User123",
     "re_password": "User123",
-    "expected_result": "注册失败，提示\"验证码已过期\"",
+    "expected_result": ["注册失败", "验证码已过期"],
     "screenshot_num": 28
   }
 ]

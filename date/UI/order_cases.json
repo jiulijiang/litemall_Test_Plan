@@ -3,60 +3,49 @@
         "case_id": "Order001",
         "case_title": "提交订单成功（全部参数填写正确）",
         "screenshot_num": 1,
-        "expected_result": "订单提交成功，页面跳转至支付页面"
+        "order_remark": "测试订单",
+        "select_address": true,
+        "expected_result": ["去支付", "页面跳转至支付页面"]
     },
     {
         "case_id": "Order002",
         "case_title": "提交订单成功（全部必填参数填写正确）",
         "screenshot_num": 2,
-        "expected_result": "订单提交成功，页面跳转至支付页面"
+        "order_remark": "",
+        "select_address": true,
+        "expected_result": ["去支付", "页面跳转至支付页面"]
     },
     {
         "case_id": "Order003",
-        "case_title": "提交订单成功（测试场景3）",
+        "case_title": "提交订单失败（地址为空）",
         "screenshot_num": 3,
-        "expected_result": "订单提交成功，页面跳转至支付页面"
+        "order_remark": "",
+        "select_address": false,
+        "expected_result": ["提交订单失败", "请选择收货地址"]
     },
     {
         "case_id": "Order004",
-        "case_title": "提交订单成功（测试场景4）",
+        "case_title": "提交订单失败（购物车为空）",
         "screenshot_num": 4,
-        "expected_result": "订单提交成功，页面跳转至支付页面"
+        "order_remark": "",
+        "select_address": true,
+        "cart_empty": true,
+        "expected_result": ["提交订单失败", "请选择商品"]
     },
     {
         "case_id": "Order005",
-        "case_title": "提交订单成功（测试场景5）",
+        "case_title": "提交订单失败（备注大于200个字符）",
         "screenshot_num": 5,
-        "expected_result": "订单提交成功，页面跳转至支付页面"
+        "order_remark": "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
+        "select_address": true,
+        "expected_result": ["提交订单失败", "订单备注不能超过200个字符"]
     },
     {
         "case_id": "Order006",
-        "case_title": "提交订单成功（测试场景6）",
+        "case_title": "提交订单成功（100字符备注）",
         "screenshot_num": 6,
-        "expected_result": "订单提交成功，页面跳转至支付页面"
-    },
-    {
-        "case_id": "Order007",
-        "case_title": "提交订单成功（测试场景7）",
-        "screenshot_num": 7,
-        "expected_result": "订单提交成功，页面跳转至支付页面"
-    },
-    {
-        "case_id": "Order008",
-        "case_title": "提交订单成功（测试场景8）",
-        "screenshot_num": 8,
-        "expected_result": "订单提交成功，页面跳转至支付页面"
-    },
-    {
-        "case_id": "Order009",
-        "case_title": "提交订单成功（测试场景9）",
-        "screenshot_num": 9,
-        "expected_result": "订单提交成功，页面跳转至支付页面"
-    },
-    {
-        "case_id": "Order010",
-        "case_title": "提交订单成功（测试场景10）",
-        "screenshot_num": 10,
-        "expected_result": "订单提交成功，页面跳转至支付页面"
+        "order_remark": "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
+        "select_address": true,
+        "expected_result": ["去支付", "页面跳转至支付页面"]
     }
 ]

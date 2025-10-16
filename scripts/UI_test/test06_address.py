@@ -1,78 +1,80 @@
 import os
 import sys
-import time
 import pytest
-from selenium import webdriver
 
 # 添加项目根目录到系统路径
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from UI.Mod06_address import Address
 from UI.wd_init import WD_init
-from common.utils import read_json_file
+from common.utils import read_json_as_dict
 
 
 class TestAddress:
     """地址管理模块测试类"""
-    
-    @classmethod
-    def setup_class(cls):
-        """类级别的前置方法"""
-        print("===== 开始地址管理模块测试 =====")
-    
-    @classmethod
-    def teardown_class(cls):
-        """类级别的后置方法"""
-        print("===== 结束地址管理模块测试 =====")
+
     
     def setup_method(self):
-        """方法级别的前置方法"""
         # 初始化浏览器
         self.wd = WD_init()
+        self.address = Address()
         # 最大化浏览器窗口
         self.wd.maximize_window()
+
     
     def teardown_method(self):
-        """方法级别的后置方法"""
         # 关闭浏览器
         if hasattr(self, 'wd'):
             self.wd.quit()
     
-    @staticmethod
-    def get_test_cases():
-        """获取测试用例数据"""
-        # 读取JSON文件中的测试用例数据
-        file_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "date", "UI", "address_cases.json")
-        test_cases = read_json_file(file_path)
-        return test_cases
-    
-    @pytest.mark.parametrize("case_id, case_title, user_name, user_phone, user_address, province, city, district, is_default, screenshot_num, expected_result", get_test_cases.__func__())
-    def test_add_address(self, case_id, case_title, user_name, user_phone, user_address, province, city, district, is_default, screenshot_num, expected_result):
+    @pytest.mark.parametrize("test_case", read_json_as_dict('date/UI/address_cases.json'))
+    def test_add_address(self, test_case):
         """测试添加地址功能"""
-        print(f"\n正在执行测试用例: {case_id} - {case_title}")
-        
-        # 实例化地址模块
-        address = Address()
-        
+
+
         try:
-            # 调用添加地址方法，使用Mod06_address.py中默认的省市地区值
-            address.add_address(
-                self.wd,
+            # 调用添加地址方法
+            case_id=test_case['case_id']
+            case_title=test_case['case_title']
+            user_name=test_case['user_name']
+            user_phone=test_case['user_phone']
+            user_address=test_case['user_address']
+            province=test_case['province']
+            city=test_case['city']
+            district=test_case['district']
+            is_default=test_case['is_default']
+            screenshot_num=test_case['screenshot_num']
+            expected_result=test_case['expected_result']
+            choose_address=test_case.get('choose_address', True)
+
+
+            # 调用添加地址方法
+            self.address.add_address(
+                wd=self.wd,
                 USER_NAME=user_name,
                 USER_PHONE=user_phone,
                 USER_ADDRESS=user_address,
+                PROVINCE=province,
+                CITY=city,
+                DISTRICT=district,
                 is_default=is_default,
+                CHOOSE_ADDRESS=choose_address,
                 SCREENSHOT_NUM=screenshot_num
             )
+
+            # 截图以便后期检查页面上是否显示了预期的提示信息
+            print(f"测试用例{case_id}({case_title})执行完成，截图已保存")
+            print(f"预期结果: {expected_result}")
             
-            # 简化测试逻辑，确保能正常执行
-            print(f"测试用例 {case_id} - {case_title}: 测试通过")
-            
+            # 断言预期结果列表中是否有任意一个字符串包含在页面源代码中
+            assert any(result in self.wd.page_source for result in expected_result), \
+                f"测试用例{case_id}({case_title})失败，预期结果列表中的任何字符串都未在页面中找到: {expected_result}"
+
+
+
         except Exception as e:
-            # 捕获异常但不抛出，只打印信息
-            print(f"测试用例 {case_id} - {case_title}: 遇到异常 - {str(e)}")
-            # 这里不抛出异常，确保测试能继续执行
-            pass
+            print(f"测试用例{case_id}({case_title})执行失败: {str(e)}")
+            raise
 
 
 if __name__ == "__main__":

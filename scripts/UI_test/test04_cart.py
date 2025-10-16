@@ -1,28 +1,16 @@
 import os
 import sys
-import json
-import time
 import pytest
-from selenium import webdriver
 
 # 添加项目根目录到路径
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from UI.Mod04_cart import Cart
+from UI.Mod04_Cart import Cart
 from UI.wd_init import WD_init
-
+from common.utils import read_json_as_dict
+from selenium.webdriver.common.by import By
 
 class TestCart:
     """购物车模块测试类"""
-    
-    @classmethod
-    def setup_class(cls):
-        """测试类的初始化方法，在所有测试方法执行前执行一次"""
-        print("\n===== 开始执行购物车模块测试 =====")
-    
-    @classmethod
-    def teardown_class(cls):
-        """测试类的清理方法，在所有测试方法执行后执行一次"""
-        print("\n===== 购物车模块测试执行完毕 =====")
     
     def setup_method(self):
         """每个测试方法执行前的初始化方法"""
@@ -33,52 +21,56 @@ class TestCart:
     
     def teardown_method(self):
         """每个测试方法执行后的清理方法"""
-        # 关闭浏览器
+        # 清空购物车，确保后续测试不受到影响
         if self.wd:
+            try:
+                self.wd.close()
+                # 重新初始化WebDriver
+                self.wd = WD_init()
+                # 执行清除购物车操作
+                self.cart = Cart()
+                self.cart.clear_cart(self.wd)
+                self.wd.close()
+            except Exception:
+                # 忽略清空购物车过程中可能出现的异常
+                pass
+            # 关闭浏览器实例
             self.wd.quit()
+
     
-    @staticmethod
-    def get_test_cases():
-        """获取测试用例数据"""
-        try:
-            # 读取JSON文件中的测试数据
-            file_path = os.path.join(
-                os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-                "date", "UI", "cart_cases.json"
-            )
-            
-            with open(file_path, "r", encoding="utf-8") as f:
-                test_cases = json.load(f)
-                
-            # 将测试数据转换为元组格式，用于pytest参数化
-            test_data = []
-            for case in test_cases:
-                test_data.append((
-                    case["case_id"],
-                    case["case_title"],
-                    case["spec"],
-                    case["goods_num"],
-                    case["screenshot_num"],
-                    case["expected_result"]
-                ))
-            
-            return test_data
-        except Exception as e:
-            print(f"读取测试数据时发生错误: {e}")
-            return []
-    
-    @pytest.mark.parametrize("case_id, case_title, spec, goods_num, screenshot_num, expected_result", get_test_cases.__func__())
-    def test_add_cart(self, case_id, case_title, spec, goods_num, screenshot_num, expected_result):
+    @pytest.mark.parametrize("test_case", read_json_as_dict('date/UI/cart_cases.json'))
+    def test_add_cart(self, test_case):
         """添加购物车测试方法"""
-        print(f"\n执行测试用例: {case_id} - {case_title}")
-        print(f"测试数据: 规格={spec}, 商品数量={goods_num}, 截图编号={screenshot_num}")
+
+
         
         try:
+
+            case_id = test_case['case_id']
+            case_title = test_case['case_title']
+            spec = test_case['spec']
+            goods_num = test_case['goods_num']
+            screenshot_num = test_case['screenshot_num']
+            expected_result = test_case['expected_result']
+
             # 执行添加购物车操作
             self.cart.add_cart(self.wd, spec, goods_num, screenshot_num)
-            
-            # 由于我们以Mod04_Cart.py为准，这里不添加额外的断言
-            # 只要add_cart方法执行完成，就认为测试通过
+
+            # 截图以便后期检查页面上是否显示了预期的提示信息
+            print(f"测试用例{case_id}({case_title})执行完成，截图已保存")
+            print(f"预期结果: {expected_result}")
+
+            # 差异化断言-以匹配不同用例需求
+            if int(case_id[5:]) <= 10:
+                assert any(result in self.wd.find_element(By.CSS_SELECTOR, '.van-info').text for result in expected_result), \
+                    f"测试用例{case_id}({case_title})失败，预期结果列表中的任何字符串都未在页面中找到: {expected_result}"
+            else:
+                assert all(result in self.wd.page_source for result in expected_result), \
+                    f"测试用例{case_id}({case_title})失败，预期结果列表中的所有字符串未在页面中找到: {expected_result}"
+
+
+
+
             print(f"{case_id} - {case_title}: 测试通过")
         except Exception as e:
             print(f"{case_id} - {case_title}: 测试失败，错误信息: {str(e)}")

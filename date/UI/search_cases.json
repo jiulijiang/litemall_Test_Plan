@@ -1,72 +1,65 @@
 [
   {
     "case_id": "Search001",
-    "case_title": "模糊搜索商品",
+    "case_title": "返回指定商品信息（模糊搜索）",
     "keyword": "母亲",
     "screenshot_num": 1,
-    "expected_result": "搜索结果页显示后台上架的母亲节商品信息"
+    "expected_result": ["母亲节礼物"]
   },
   {
     "case_id": "Search002",
-    "case_title": "精确搜索商品",
+    "case_title": "返回指定商品信息（精确搜索）",
     "keyword": "母亲节",
     "screenshot_num": 2,
-    "expected_result": "搜索结果页显示后台上架的母亲节商品信息"
+    "expected_result": ["母亲节礼物"]
   },
   {
     "case_id": "Search003",
-    "case_title": "搜索结果为空",
-    "keyword": "不存在的商品123456",
+    "case_title": "返回推荐商品信息（关键字为空）",
+    "keyword": "",
     "screenshot_num": 3,
-    "expected_result": "搜索结果页显示'暂无相关商品'或类似提示信息"
+    "expected_result": ["好好学习、天天向上","天然硅胶宠物除毛按摩刷","耐用材料猫咪护理清洁套装"]
   },
   {
     "case_id": "Search004",
-    "case_title": "搜索框为空（返回推荐）",
-    "keyword": "",
+    "case_title": "返回推荐商品信息（商品不存在）",
+    "keyword": "父亲节",
     "screenshot_num": 4,
-    "expected_result": "自动显示推荐商品信息"
+    "expected_result": ["好好学习、天天向上","天然硅胶宠物除毛按摩刷","耐用材料猫咪护理清洁套装"]
   },
   {
     "case_id": "Search005",
-    "case_title": "商品不存在（返回推荐）",
-    "keyword": "父亲节",
+    "case_title": "返回指定商品信息（关键字拼音）",
+    "keyword": "muqinjie",
     "screenshot_num": 5,
-    "expected_result": "搜索结果页显示推荐商品信息"
+    "expected_result": ["母亲节礼物"]
   },
   {
     "case_id": "Search006",
-    "case_title": "拼音搜索",
-    "keyword": "muqinjie",
+    "case_title": "返回指定商品信息（关键字英文单词）",
+    "keyword": "Mother's Day",
     "screenshot_num": 6,
-    "expected_result": "搜索结果页显示后台上架的母亲节商品信息"
+    "expected_result": ["母亲节礼物"]
   },
   {
     "case_id": "Search007",
-    "case_title": "英文单词搜索",
-    "keyword": "Mother's Day",
+    "case_title": "返回指定商品信息（关键字标点符号）",
+    "keyword": "母亲、，",
     "screenshot_num": 7,
-    "expected_result": "搜索结果页显示后台上架的母亲节商品信息"
+    "expected_result": ["母亲节礼物"]
   },
   {
     "case_id": "Search008",
-    "case_title": "标点符号搜索",
-    "keyword": "母亲、，",
+    "case_title": "返回截取之后对应商品信息（超长关键字）",
+    "keyword": "好好学习、天天向上哈哈哈哈哈哈哈哈",
     "screenshot_num": 8,
-    "expected_result": "搜索结果页显示后台上架的母亲节商品信息"
+    "expected_result": ["好好学习、天天向上"]
   },
   {
     "case_id": "Search009",
-    "case_title": "超长关键字搜索",
-    "keyword": "好好学习、天天向上哈哈哈哈哈哈哈哈",
+    "case_title": "返回提示消息（敏感词搜索）",
+    "keyword": "毒品",
     "screenshot_num": 9,
-    "expected_result": "搜索结果页显示后台上架的好好学习、天天向上商品信息"
-  },
-  {
-    "case_id": "Search010",
-    "case_title": "敏感词搜索",
-    "keyword": "违规",
-    "screenshot_num": 10,
-    "expected_result": "搜索结果页显示适当的提示消息"
+    "expected_result": ["搜索内容不合法","包含敏感词","换个关键词搜索吧"]
   }
 ]

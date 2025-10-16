@@ -1,8 +1,8 @@
 import os
 import sys
-import json
 import pytest
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
 from UI.wd_init import WD_init
 from UI.Mod01_usrRegister import UserRegister
 from common.utils import read_json_as_dict
@@ -61,13 +61,14 @@ class TestUserRegister:
             self.register.register(self.wd, user_phone, code, user_name, user_password, re_password, screenshot_num,case_title)
             
 
-            # 例如检查页面上是否显示了预期的提示信息
+            # 截图以便后期检查页面上是否显示了预期的提示信息
             print(f"测试用例{case_id}({case_title})执行完成，截图已保存")
             print(f"预期结果: {expected_result}")
             
 
-            # 断言预期结果是否包含在页面源代码中
-            assert expected_result in self.wd.page_source, f"测试用例{case_id}({case_title})失败，预期结果'{expected_result}'未在页面中找到"
+            # 断言预期结果列表中是否有任意一个字符串包含在页面源代码中
+            assert any(result in self.wd.page_source for result in expected_result), \
+                f"测试用例{case_id}({case_title})失败，预期结果列表中的任何字符串都未在页面中找到: {expected_result}"
 
 
         except Exception as e:

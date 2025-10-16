@@ -24,7 +24,7 @@ class Address:
 
     def add_address(self, wd: webdriver, USER_NAME: str, USER_PHONE: str, USER_ADDRESS: str,
                     PROVINCE: str = "北京市" ,CITY: str = "市辖区",DISTRICT: str = "西城区",
-                    is_default: bool = False,SCREENSHOT_NUM: int = 0):
+                    CHOOSE_ADDRESS: bool = True, is_default: bool = False,SCREENSHOT_NUM: int = 0):
         """
         添加地址
         """
@@ -40,20 +40,22 @@ class Address:
         WebDriverWait(wd,5).until(lambda x: x.find_elements(By.CSS_SELECTOR, 'input'))[0].send_keys(USER_NAME)
         WebDriverWait(wd,5).until(lambda x: x.find_elements(By.CSS_SELECTOR, 'input'))[1].send_keys(USER_PHONE)
         time.sleep(0.5)
-        # 地址选择
-        WebDriverWait(wd,5).until(lambda x: x.find_element(By.CSS_SELECTOR, '.van-cell--clickable')).click()
-        time.sleep(1)  # 等待动画结束
-        # 选择省
-        WebDriverWait(wd,5).until(lambda x: x.find_element(By.XPATH, f"//*[text()='{PROVINCE}']")).click()  # xpth可以根据文字选择
-        time.sleep(1)  # 等待滚动动画
-        # 选择市
-        WebDriverWait(wd,5).until(lambda x: x.find_element(By.XPATH, f"//*[text()='{CITY}']")).click()
-        time.sleep(1)
-        # 选择区
-        WebDriverWait(wd,5).until(lambda x: x.find_element(By.XPATH, f"//*[text()='{DISTRICT}']")).click()
-        time.sleep(1)
-        # 点击确定
-        WebDriverWait(wd,5).until(lambda x: x.find_element(By.CSS_SELECTOR, '.van-picker__confirm')).click()
+        # 差异化地址选择
+        if CHOOSE_ADDRESS:
+            # 地址选择
+            WebDriverWait(wd,5).until(lambda x: x.find_element(By.CSS_SELECTOR, '.van-cell--clickable')).click()
+            time.sleep(1)  # 等待动画结束
+            # 选择省
+            WebDriverWait(wd,5).until(lambda x: x.find_element(By.XPATH, f'//*[text()="{PROVINCE}"]')).click()  # xpth可以根据文字选择
+            time.sleep(1)  # 等待滚动动画
+            # 选择市
+            WebDriverWait(wd,5).until(lambda x: x.find_element(By.XPATH, f'//*[text()="{CITY}"]')).click()
+            time.sleep(1)
+            # 选择区
+            WebDriverWait(wd,5).until(lambda x: x.find_element(By.XPATH, f'//*[text()="{DISTRICT}"]')).click()
+            time.sleep(1)
+            # 点击确定
+            WebDriverWait(wd,5).until(lambda x: x.find_element(By.CSS_SELECTOR, '.van-picker__confirm')).click()
 
         # 填写详细地址
         WebDriverWait(wd,5).until(lambda x: x.find_element(By.CSS_SELECTOR, 'textarea')).send_keys(USER_ADDRESS)
