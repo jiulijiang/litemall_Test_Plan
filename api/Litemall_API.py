@@ -266,5 +266,31 @@ class LiteMallAPI:
 
 if __name__ == "__main__":
     test = LiteMallAPI()
-    print(test.addAddress("jack001","13611224455","China","Beijing","Beijing","HaiDian","110101","100091","heima",True).json())
-    print(test.checkAddress().json())
+    
+    # 批量注册测试账号-性能测试准备
+    import csv
+    import time
+    
+    # 读取CSV文件中的账号信息
+    with open('Jmeter/userlogin.csv', 'r', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        next(reader)  # 跳过表头
+        
+        # 从13900000000开始的手机号序列
+        phone_base = 13900000000
+        
+        for i, row in enumerate(reader):
+            username, password = row
+            phone = str(phone_base + i)
+            
+            # 先获取验证码
+            verify_response = test.getverifyCode(phone)
+            print(f"获取验证码 for {phone}: {verify_response.json()}")
+            
+            # 注册账号（使用固定验证码666666）
+            response = test.usrRigister("666666", username, password, phone)
+            print(f"注册账号 {username} ({phone}): {response.json()}")
+            
+            # 添加延迟避免请求过于频繁
+            time.sleep(0.5)
+    
